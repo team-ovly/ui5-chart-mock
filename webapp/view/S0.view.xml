@@ -1,0 +1,18 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ovly.chart.controller.S0" displayBlock="true">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<Select items="{/Regions}">
+							<items>
+								<core:Item xmlns:core="sap.ui.core" key="{Id}" text="{Name}"/>
+							</items>
+						</Select>
+						<core:Fragment xmlns:core="sap.ui.core" fragmentName="ovly.chart.view.VizFrame" type="XML" id="list1"/>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

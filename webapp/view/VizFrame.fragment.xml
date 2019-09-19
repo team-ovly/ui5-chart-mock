@@ -1,0 +1,24 @@
+<core:FragmentDefinition 
+	xmlns:core='sap.ui.core' 
+	xmlns="sap.viz.ui5.controls" 
+	xmlns:data="sap.viz.ui5.data"
+	xmlns:feeds="sap.viz.ui5.controls.common.feeds">
+
+	<VizFrame vizType="bar" vizProperties="{ title: { text: 'Vendas por ano', style: { color: 'orange' }  } }">
+		<dataset>
+			<data:FlattenedDataset data="{/SalesByRegions}">
+				<data:dimensions>
+					<data:DimensionDefinition name="Ano" value="{Year}" />
+				</data:dimensions>
+				<data:measures>
+					<data:MeasureDefinition name="Total" value="{Revenue}" />
+				</data:measures>
+			</data:FlattenedDataset>
+		</dataset>
+		<feeds>
+			<feeds:FeedItem type="Dimension" values="Ano" uid="categoryAxis" />
+			<feeds:FeedItem type="Measure" values="Total" uid="valueAxis" />
+		</feeds>
+	</VizFrame>
+	
+</core:FragmentDefinition>
